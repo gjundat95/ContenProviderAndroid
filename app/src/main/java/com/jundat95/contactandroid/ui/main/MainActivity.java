@@ -8,10 +8,11 @@ import android.widget.RelativeLayout;
 
 import com.jundat95.contactandroid.R;
 import com.jundat95.contactandroid.ui.contact.ContactActivity;
+import com.jundat95.contactandroid.ui.music.MusicActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RelativeLayout contact, mp3, img;
+    private RelativeLayout contact, music, img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         contact = (RelativeLayout) findViewById(R.id.contact);
-        mp3 = (RelativeLayout) findViewById(R.id.mp3);
+        music = (RelativeLayout) findViewById(R.id.music);
         img = (RelativeLayout) findViewById(R.id.img);
 
 
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        music.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MusicActivity.class);
                 startActivity(intent);
             }
         });

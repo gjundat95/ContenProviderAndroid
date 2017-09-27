@@ -122,7 +122,6 @@ public class ContactActivity extends AppCompatActivity {
 
         }
 
-
         return photo;
     }
 

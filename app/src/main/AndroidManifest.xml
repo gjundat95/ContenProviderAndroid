@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jundat95.contactandroid">
 
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.contact.ContactActivity"></activity>
+        <activity
+            android:name=".ui.contact.ContactActivity"
+            android:theme="@style/AppTheme"
+            />
+        <activity
+            android:name=".ui.music.MusicActivity"
+            android:theme="@style/AppTheme.Music"
+            />
     </application>
 
 </manifest>
