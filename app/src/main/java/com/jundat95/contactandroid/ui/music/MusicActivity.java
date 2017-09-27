@@ -43,6 +43,7 @@ public class MusicActivity extends AppCompatActivity {
     private RecyclerView rcvMusic;
     private RelativeLayout layout;
     private RelativeLayout description, play;
+    private MusicAdapter musicAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class MusicActivity extends AppCompatActivity {
 
         getAllMusic();
 
-        MusicAdapter musicAdapter = new MusicAdapter(this, musicModels);
+        musicAdapter = new MusicAdapter(this, musicModels);
         rcvMusic.setAdapter(musicAdapter);
         rcvMusic.setLayoutManager(new LinearLayoutManager(this));
 
@@ -108,5 +109,12 @@ public class MusicActivity extends AppCompatActivity {
         } else {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        musicAdapter.stopPlaying();
+
     }
 }
